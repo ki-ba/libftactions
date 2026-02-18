@@ -1,0 +1,7 @@
+.obj/
+main.c
+a.out
+libft.a
+.vscode
+compile_commands.json
+.cache/
