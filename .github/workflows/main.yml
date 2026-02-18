@@ -29,7 +29,9 @@ jobs:
       name: run tests
       steps:
           - uses: actions/checkout@v4
-          - name: install paco
-            run: bash -c "$(curl -fsSL https://raw.github.com/xicodomingues/francinette/master/bin/install.sh)"
-          - name: run paco
-            run: francinette
+          - name: install libft tester
+            run: git clone git@github.com:ki-ba/libft_tester.git ../libftTester
+          - name: compile tester
+            run : make -C ../libftTester IGNORE_SIGNALS=1
+          - name: run tester
+            run: ../libftTester
