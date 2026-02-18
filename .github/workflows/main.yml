@@ -32,4 +32,4 @@ jobs:
           - name: install paco
             run: bash -c "$(curl -fsSL https://raw.github.com/xicodomingues/francinette/master/bin/install.sh)"
           - name: run paco
-            run: paco
+            run: francinette
