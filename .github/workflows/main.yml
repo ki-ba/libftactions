@@ -24,4 +24,12 @@ jobs:
             run: python3 -m pip install -U norminette
           - name: run norminette
             run: norminette
-          
+  paco:
+      runs-on: ubuntu-latest
+      name: run tests
+      steps:
+          - uses: actions/checkout@v4
+          - name: install paco
+            run: bash -c "$(curl -fsSL https://raw.github.com/xicodomingues/francinette/master/bin/install.sh)"
+          - name: run paco
+            run: paco
