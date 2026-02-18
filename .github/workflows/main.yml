@@ -24,13 +24,15 @@ jobs:
             run: python3 -m pip install -U norminette
           - name: run norminette
             run: norminette
-  paco:
+  tester:
       runs-on: ubuntu-latest
       name: run tests
       steps:
           - uses: actions/checkout@v4
           - name: install libft tester
             run: git clone https://github.com/ki-ba/libft_tester.git libftTester
+          - name: compile libft
+            run : make
           - name: compile tester
             run : make -C libftTester LIBDIR=../ IGNORE_SIGNALS=1
           - name: run tester
