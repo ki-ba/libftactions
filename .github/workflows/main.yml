@@ -39,6 +39,7 @@ jobs:
         runs-on: ubuntu-latest
         name: run francinette
         steps:
+        - uses: actions/checkout@v4
         - name: install francinette
           run: bash -c "$(curl -fsSL https://raw.github.com/xicodomingues/francinette/master/bin/install.sh)"
         - name: run francinette
