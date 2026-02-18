@@ -40,6 +40,8 @@ jobs:
         name: run francinette
         steps:
         - uses: actions/checkout@v4
+        - name: install norminette
+          run: python3 -m pip install -U norminette
         - name: install francinette
           run: bash -c "$(curl -fsSL https://raw.github.com/xicodomingues/francinette/master/bin/install.sh)"
         - name: run francinette
