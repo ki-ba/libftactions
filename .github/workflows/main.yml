@@ -19,6 +19,7 @@ jobs:
       runs-on: ubuntu-latest
       name:  run norminette
       steps:
+          - uses: actions/checkout@v4
           - name: install norminette
             run: python3 -m pip install -U norminette
           - name: run norminette
