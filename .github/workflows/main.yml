@@ -32,7 +32,7 @@ jobs:
       - name: compile libft
         run : uname && make --dry-run && make
       - name: compile tester
-        run : make -C libftTester LIBDIR=../ IGNORE_SIGNALS=1
+        run : make -C libftTester LIBDIR=../ IGNORE_SIGNALS=1 LINUX_FLAGS=-lbsd
       - name: run tester
         run: ./libftTester/run_tests
   paco:
