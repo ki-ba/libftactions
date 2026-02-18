@@ -30,8 +30,16 @@ jobs:
       - name: install libft tester
         run: git clone https://github.com/ki-ba/libft_tester.git libftTester
       - name: compile libft
-        run : uname && make
+        run : uname && make --dry-run && make
       - name: compile tester
         run : make -C libftTester LIBDIR=../ IGNORE_SIGNALS=1
       - name: run tester
         run: ./libftTester/run_tests
+  paco:
+        runs-on: ubuntu-latest
+        name: run francinette
+        steps:
+        - name: install francinette
+          run: bash -c "$(curl -fsSL https://raw.github.com/xicodomingues/francinette/master/bin/install.sh)"
+        - name: run francinette
+          run: "$HOME/francinette/tester.sh"
