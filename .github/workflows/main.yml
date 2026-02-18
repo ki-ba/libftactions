@@ -30,8 +30,8 @@ jobs:
       steps:
           - uses: actions/checkout@v4
           - name: install libft tester
-            run: git clone git@github.com:ki-ba/libft_tester.git ../libftTester
+            run: git clone git@github.com:ki-ba/libft_tester.git libftTester
           - name: compile tester
-            run : make -C ../libftTester IGNORE_SIGNALS=1
+            run : make -C libftTester LIBDIR=../ IGNORE_SIGNALS=1
           - name: run tester
-            run: ../libftTester
+            run: ./libftTester/run_tests
